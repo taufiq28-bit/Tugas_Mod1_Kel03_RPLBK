@@ -1309,9 +1309,9 @@ const checkOnClick = () => {
 <<<<<<< HEAD
     // reset element
     const listOfStudents = document.getElementById('list-of-students');
-    listOfStudents.innerHTML = desiredData.length > 0 ? '' : 'Data Tidak Ditemukan!';
+    listOfStudents.innerHTML = dataAnggota.length > 0 ? '' : 'Data Tidak Ditemukan!';
 
-    for (const student of desiredData) {
+    for (const student of dataAnggota) {
         listOfStudents.append(buildTable(student));
     }
 }
