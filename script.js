@@ -1357,6 +1357,7 @@ const checkOnClick = () => {
         // Obyek dan input diberi fungsi .toLowerCase() untuk memudahkan pencarian
         return anggota.nama_lengkap.toLowerCase().includes(getInput.value.toLowerCase())
     });
+<<<<<<< HEAD
     // reset element
     const listOfStudents = document.getElementById('list-of-students');
     listOfStudents.innerHTML = desiredData.length > 0 ? '' : 'Data Tidak Ditemukan!';
@@ -1365,3 +1366,50 @@ const checkOnClick = () => {
         listOfStudents.append(buildTable(student));
     }
 }
+=======
+    // Mengeluarkan obyek yang telah di filter ke console
+    console.log(dataAnggota);
+
+    const tidak_ditemukan = document.getElementById("tidak_ditemukan");
+    const nama_lengkap1 = document.getElementById("nama_lengkap1");
+    const data_anggota1 = document.getElementById("data_anggota1");
+    const nama_lengkap2 = document.getElementById("nama_lengkap2");
+    const data_anggota2 = document.getElementById("data_anggota2");
+    const j = dataAnggota.length;
+
+    if (j > 0 && j <= 20) {
+        tidak_ditemukan.style.display = "none";
+        nama_lengkap2.innerHTML = "";
+        data_anggota2.innerHTML = "";
+        nama_lengkap1.innerHTML = dataAnggota[0].nama_lengkap;
+        data_anggota1.innerHTML = "Nama Lengkap: " + dataAnggota[0].nama_lengkap + 
+                                "<br>Nama Panggilan: " + dataAnggota[0].nama_panggilan + 
+                                "<br>NIM: " + dataAnggota[0].nim + 
+                                "<br>Nomor Telepon: " + dataAnggota[0].nomor_telepon + 
+                                "<br>ID Line: " + dataAnggota[0].id_line + 
+                                "<br>Email: " + dataAnggota[0].email + 
+                                "<br>Hobi: " + dataAnggota[0].hobi + 
+                                "<br>Tanggal Lahir " + dataAnggota[0].tanggal_lahir;
+        nama_lengkap2.innerHTML = dataAnggota[1].nama_lengkap;
+        data_anggota2.innerHTML = "Nama Lengkap: " + dataAnggota[1].nama_lengkap + 
+                                "<br>Nama Panggilan: " + dataAnggota[1].nama_panggilan + 
+                                "<br>NIM: " + dataAnggota[1].nim + 
+                                "<br>Nomor Telepon: " + dataAnggota[1].nomor_telepon + 
+                                "<br>ID Line: " + dataAnggota[1].id_line + 
+                                "<br>Email: " + dataAnggota[1].email + 
+                                "<br>Hobi: " + dataAnggota[1].hobi + 
+                                "<br>Tanggal Lahir " + dataAnggota[1].tanggal_lahir;
+    } else {
+        location.reload();
+        tidak_ditemukan.innerHTML = "Data Tidak Ditemukan!";
+    }
+}
+
+// // Fungsi yang dijalankan saat input berubah
+// const checkOnKeyUp = (inputDTO) => {
+//     // Memfilter obyek dari array Data Aegis
+//     const dataAnggota = array.filter(anggota => anggota.nim.toString() === inputDTO.value.toString());
+//   // Mengeluarkan obyek yang telah di filter ke console
+//   console.log(dataAnggota);
+// }
+>>>>>>> Cara-Bodoh
