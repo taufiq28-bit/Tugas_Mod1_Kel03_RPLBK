@@ -1317,6 +1317,8 @@ const checkOnClick = () => {
 
     if (j > 0 && j <= 20) {
         tidak_ditemukan.style.display = "none";
+        nama_lengkap2.innerHTML = "";
+        data_anggota2.innerHTML = "";
         nama_lengkap1.innerHTML = dataAnggota[0].nama_lengkap;
         data_anggota1.innerHTML = "Nama Lengkap: " + dataAnggota[0].nama_lengkap + 
                                 "<br>Nama Panggilan: " + dataAnggota[0].nama_panggilan + 
