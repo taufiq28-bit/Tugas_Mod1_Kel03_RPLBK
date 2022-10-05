@@ -1295,6 +1295,58 @@ const array = [{
     hobi: "olahraga"
 }];
 
+const buildTable = (student) => {
+    const wrapper = document.createElement('div');
+    wrapper.id = student.nim;
+
+    // <table>
+    const table = document.createElement('table');
+    
+    // <thead>
+    const thead = document.createElement('thead');
+    
+    // <th>
+    const th = document.createElement('th');
+    // <h1>
+    const h1 = document.createElement('h1');
+    h1.textContent = student.nama_lengkap;
+
+    th.append(h1);
+    thead.append(th);
+    table.append(thead);
+    
+    // <tbody>
+    const tbody = document.createElement('tbody');
+
+    const buildTableRow = (label, value) => {
+        // <tr>
+        const tr = document.createElement('tr');
+        // <td>
+        const td1 = document.createElement('td');
+        td1.textContent = label;
+        // <td>
+        const td2 = document.createElement('td');
+        td2.textContent = value;
+        
+        tr.append(td1, td2);
+        return tr;
+    }
+
+    tbody.append(buildTableRow("Nama Lengkap", `: ${student.nama_lengkap || "-"}`));
+    tbody.append(buildTableRow("Nama Panggilan", `: ${student.nama_panggilan || "-"}`));
+    tbody.append(buildTableRow("NIM", `: ${student.nim || "-"}`));
+    tbody.append(buildTableRow("Nomor Telepon", `: ${student.nomor_telepon || "-"}`));
+    tbody.append(buildTableRow("ID Line", `: ${student.id_line || "-"}`));
+    tbody.append(buildTableRow("Email", `: ${student.email || "-"}`));
+    tbody.append(buildTableRow("Hobi", `: ${student.hobi || "-"}`));
+    tbody.append(buildTableRow("Tanggal Lahir", `: ${student.tanggal_lahir || "-"}`));
+
+    table.append(tbody);
+    wrapper.append(table);
+
+    return wrapper;
+}
+
 // Fungsi yang dijalankan saat tombol "Cari di click"
 const checkOnClick = () => {
     // Mengambil nilai dari input lalu menyimpannya ke variabel getInput
@@ -1305,8 +1357,6 @@ const checkOnClick = () => {
         // Obyek dan input diberi fungsi .toLowerCase() untuk memudahkan pencarian
         return anggota.nama_lengkap.toLowerCase().includes(getInput.value.toLowerCase())
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
     // reset element
     const listOfStudents = document.getElementById('list-of-students');
     listOfStudents.innerHTML = dataAnggota.length > 0 ? '' : 'Data Tidak Ditemukan!';
@@ -1315,55 +1365,3 @@ const checkOnClick = () => {
         listOfStudents.append(buildTable(student));
     }
 }
-=======
-    // Mengeluarkan obyek yang telah di filter ke console
-    console.log(dataAnggota);
-
-    const tidak_ditemukan = document.getElementById("tidak_ditemukan");
-    const nama_lengkap1 = document.getElementById("nama_lengkap1");
-    const data_anggota1 = document.getElementById("data_anggota1");
-    const nama_lengkap2 = document.getElementById("nama_lengkap2");
-    const data_anggota2 = document.getElementById("data_anggota2");
-    const j = dataAnggota.length;
-
-    if (j > 0 && j <= 20) {
-        tidak_ditemukan.style.display = "none";
-        nama_lengkap2.innerHTML = "";
-        data_anggota2.innerHTML = "";
-        nama_lengkap1.innerHTML = dataAnggota[0].nama_lengkap;
-        data_anggota1.innerHTML = "Nama Lengkap: " + dataAnggota[0].nama_lengkap + 
-                                "<br>Nama Panggilan: " + dataAnggota[0].nama_panggilan + 
-                                "<br>NIM: " + dataAnggota[0].nim + 
-                                "<br>Nomor Telepon: " + dataAnggota[0].nomor_telepon + 
-                                "<br>ID Line: " + dataAnggota[0].id_line + 
-                                "<br>Email: " + dataAnggota[0].email + 
-                                "<br>Hobi: " + dataAnggota[0].hobi + 
-                                "<br>Tanggal Lahir " + dataAnggota[0].tanggal_lahir;
-        nama_lengkap2.innerHTML = dataAnggota[1].nama_lengkap;
-        data_anggota2.innerHTML = "Nama Lengkap: " + dataAnggota[1].nama_lengkap + 
-                                "<br>Nama Panggilan: " + dataAnggota[1].nama_panggilan + 
-                                "<br>NIM: " + dataAnggota[1].nim + 
-                                "<br>Nomor Telepon: " + dataAnggota[1].nomor_telepon + 
-                                "<br>ID Line: " + dataAnggota[1].id_line + 
-                                "<br>Email: " + dataAnggota[1].email + 
-                                "<br>Hobi: " + dataAnggota[1].hobi + 
-                                "<br>Tanggal Lahir " + dataAnggota[1].tanggal_lahir;
-    } else {
-        location.reload();
-        tidak_ditemukan.innerHTML = "Data Tidak Ditemukan!";
-    }
-}
-
-// // Fungsi yang dijalankan saat input berubah
-// const checkOnKeyUp = (inputDTO) => {
-//     // Memfilter obyek dari array Data Aegis
-//     const dataAnggota = array.filter(anggota => anggota.nim.toString() === inputDTO.value.toString());
-//   // Mengeluarkan obyek yang telah di filter ke console
-//   console.log(dataAnggota);
-// }
->>>>>>> Cara-Bodoh
-=======
-    // Mengeluarkan obyek yang telah di filter ke console
-    console.log(dataAnggota);
-}
->>>>>>> parent of 64d49f6 (commit afifa)
